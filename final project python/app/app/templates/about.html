@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Bim Market</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="/" class="logo">BIM Market</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main content -->
+    <main>
+        <section class="about">
+            <div class="container">
+                <h1 class="fade-in">About Us</h1>
+                <p class="fade-in">Welcome to Bim Market! We are a team of motivated students working on this project with the aim to not only create a successful online marketplace but also to excel in our academic performance.</p>
+
+                <h2 class="fade-in">Meet the Creators</h2>
+                <ul>
+                    <li class="slide-up"><strong>Baizhan</strong>: Responsible for the front-end development and design, creating a user-friendly and visually appealing interface.</li>
+                    <li class="slide-up"><strong>Ilyas</strong>: Back-end development expert, ensuring the smooth operation of server-side functionality and database management.</li>
+                    <li class="slide-up"><strong>Muzafar</strong>: Full-stack developer handling both front-end and back-end integration, implementing efficient CRUD functionality.</li>
+                </ul>
+
+                <h2 class="fade-in">Our Goal</h2>
+                <p class="fade-in">The purpose of this project is to achieve a high grade and earn a scholarship, helping us continue our education and make a positive impact in the tech industry.</p>
+
+                <!-- Back button -->
+                <a href="/" class="btn fade-in"><i class="fas fa-home"></i> Back to Home</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Bim Market. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Animation on scroll
+        const faders = document.querySelectorAll('.fade-in');
+        const sliders = document.querySelectorAll('.slide-up');
+
+        const appearOptions = {
+            threshold: 0.3,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('appear');
+                appearOnScroll.unobserve(entry.target);
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => appearOnScroll.observe(fader));
+        sliders.forEach(slider => appearOnScroll.observe(slider));
+    </script>
+</body>
+</html>

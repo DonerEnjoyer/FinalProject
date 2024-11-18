@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart | Bim Market</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='cart.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <a href="/" class="logo">BIM market</a>
+                <ul>
+                    <li><a href="/product">Product catalogue</a></li>
+                    <li><a href="/cart">Cart</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="cart">
+            <div class="container">
+                <h1>Your Shopping Cart</h1>
+                <table class="cart-items">
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Actions</th>
+                    </tr>
+                    <tr>
+                        <td>Product 1</td>
+                        <td>500₸</td>
+                        <td><input type="number" value="1"></td>
+                        <td>500₸</td>
+                        <td><button class="btn">Remove</button></td>
+                    </tr>
+                    <tr>
+                        <td>Product 2</td>
+                        <td>700₸</td>
+                        <td><input type="number" value="1"></td>
+                        <td>700₸</td>
+                        <td><button class="btn">Remove</button></td>
+                    </tr>
+                </table>
+                <div class="total">
+                    <h3>Total: 1200₸</h3>
+                    <a href="/checkout" class="btn">Proceed to Checkout</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Bim Market. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

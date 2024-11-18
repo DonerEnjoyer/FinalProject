@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order History | Bim Market</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='order.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <a href="/" class="logo">Bim Market</a>
+                <ul>
+                    <li><a href="/product">Products</a></li>
+                    <li><a href="/profile">Profile</a></li>
+                    <li><a href="/cart">Cart</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="order-history">
+            <div class="container">
+                <h1>Order History</h1>
+                <table class="order-table">
+                    <tr>
+                        <th>Order #</th>
+                        <th>Date</th>
+                        <th>Total</th>
+                        <th>Status</th>
+                        <th>Details</th>
+                    </tr>
+                    <tr>
+                        <td>#12345</td>
+                        <td>2024-11-14</td>
+                        <td>1200₸</td>
+                        <td>Shipped</td>
+                        <td><a href="#">View</a></td>
+                    </tr>
+                    <tr>
+                        <td>#12346</td>
+                        <td>2024-11-12</td>
+                        <td>800₸</td>
+                        <td>Pending</td>
+                        <td><a href="#">View</a></td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Bim Market. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

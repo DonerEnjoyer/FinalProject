@@ -1,0 +1,206 @@
+/* Общие стили */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa; /* Светлый фон для контраста */
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Контейнер для всей страницы */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Навигация */
+header {
+    background-color: #2c3e50; /* Темно-синий цвет */
+    padding: 20px 0;
+    color: white;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header a.logo {
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+header ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+}
+
+header ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+header ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Фильтры */
+.filters {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 35px;
+}
+
+.filters h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.filters label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.filters select,
+.filters input[type="range"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.filters button {
+    padding: 12px 20px;
+    background-color: #007bff; /* Синий цвет для кнопок */
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filters button:hover {
+    background-color: #0056b3;
+}
+
+/* Список товаров */
+.product-list h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+.product-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    font-size: 22px;
+    margin: 15px 0;
+    color: #333;
+}
+
+.product-card p {
+    font-size: 16px;
+    color: #666;
+    margin: 12px 0;
+}
+
+.product-card .price {
+    font-size: 20px;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.product-card .btn {
+    padding: 12px 24px;
+    background-color: #28a745; /* Зеленая кнопка */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.product-card .btn:hover {
+    background-color: #218838;
+}
+
+/* Пагинация */
+.pagination {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.pagination a {
+    padding: 12px 18px;
+    background-color: #f1f1f1;
+    color: #333;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    margin: 0 8px;
+    border-radius: 5px;
+}
+
+.pagination a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.pagination .page-btn {
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50; /* Темно-синий цвет */
+    color: white;
+    padding: 25px 0;
+    text-align: center;
+    margin-top: 50px;
+}
+
+footer p {
+    font-size: 14px;
+    margin: 0;
+}
