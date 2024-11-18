@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Bim Market</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <div class="container">
+                <a href="/" class="logo">𝐁𝐈𝐌 𝐦𝐚𝐫𝐤𝐞𝐭</a>
+                
+                <!-- Main links -->
+                <ul class="nav-links">
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    
+
+                    <!-- Links visible after authentication -->
+                    {% if is_authenticated %}
+                        <li><a href="/checkout">Checkout</a></li>
+                        <li><a href="/order">Order</a></li>
+                        <li><a href="/product">Products</a></li>
+                        <li><a href="/profile">Profile</a></li>
+                    {% endif %}
+
+
+                    {% if id == 1000 %} 
+                        <li><a href="/admin">Admin</a></li>
+                    {% endif %}
+                </ul>
+                
+                <!-- Login/Register buttons and Logout button -->
+                <div class="auth-links">
+                    {% if not is_authenticated %}
+                        <a href="/login" class="btn-login">Login</a>
+                        <a href="/register" class="btn-register">Register</a>
+                    {% else %}
+                        <a href="/logout" class="btn-logout">Logout</a>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main content -->
+    <main>
+        <section class="welcome">
+            <div class="container">
+                <h1>Welcome to Bim Market!</h1>
+                <p>Find everything you need for your home and family. Great prices, quality products, and fast delivery.</p>
+                {% if is_authenticated %}
+                    <a href="/product" class="btn-primary">Go to Product Catalog</a>
+                {% endif %}
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2>Why Choose Us?</h2>
+                <div class="feature-cards">
+                    <div class="feature-card">
+                        <h3>Wide Selection</h3>
+                        <p>Thousands of products for every taste and budget.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Fast Delivery</h3>
+                        <p>We deliver your orders in the shortest possible time.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Low Prices</h3>
+                        <p>Products at affordable prices for everyone!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="popular-products">
+            <div class="container">
+                <h2>Popular Products</h2>
+                <div class="products">
+                    <div class="product-card">
+                        <img src="https://simg.marwin.kz/media/catalog/product/cache/41deb699a7fea062a8915debbbb0442c/1/0/napitok_energeticheskiy_mango_coconut_450_jb.jpg" alt="Product 1">
+                        <h3>Gorilla mango ananas</h3>
+                        <p>Napitok energeticheskiy mango-coconut</p>
+                        <p class="price">Price: 500₸</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNklqgIoGwSFyUMWF-nCj48_PGBjE3mkHH4g&s" alt="Product 2">
+                        <h3>Romanovskiy sandwich</h3>
+                        <p>Sandwich with cheese</p>
+                        <p class="price">Price: 700₸</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXl_JfD4-KrnUxWbDRa93odpmy1iD44U4dZQ&s" alt="Product 3">
+                        <h3>Alpen Gold</h3>
+                        <p>Chocolate with oreo</p>
+                        <p class="price">Price: 600₸</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Bim Market. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

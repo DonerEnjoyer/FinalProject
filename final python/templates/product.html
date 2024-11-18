@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Catalogue | Bim Market</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='product.css') }}">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <div class="container">
+                <a href="/" class="logo">Bim Market</a>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/cart">Cart</a></li>
+                    <li><a href="/order">Order</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/order">Order</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main content -->
+    <main>
+        <div class="container">
+            <h1>Product Catalogue</h1>
+            <section class="filters">
+                <h2>Filter Products</h2>
+                <form action="#" method="get">
+                    <label for="category">Category:</label>
+                    <select id="category" name="category">
+                        <option value="all">All</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="clothing">Clothing</option>
+                        <option value="home">Home & Kitchen</option>
+                    </select>
+
+                    <label for="price-range">Price Range:</label>
+                    <input type="range" id="price-range" name="price" min="0" max="1000" step="10">
+                    <span id="price-output">Price: $0 - $1000</span>
+
+                    <button type="submit" class="btn">Apply Filters</button>
+                </form>
+            </section>
+
+            <section class="product-list">
+                <h2>Featured Products</h2>
+                <div class="products">
+                    {% for prod in product%}
+                        <div class="product-card">
+                            <img src="{{ prod.picture_data }}" alt="Product 1">
+                            <h3>{{ prod.name }}</h3>
+                            <p>{{ prod.description }}</p>
+                            <p class="price">{{ prod.cost }}</p>
+                            <a href="{{ url_for('cart', product_id=prod.product_id) }}"><button type="submit" class="btn add-to-cart">Add to Cart</button></a>
+                        </div>
+                    {% endfor %}
+                    <!-- Add more products as needed -->
+                </div>
+            </section>
+
+            <!-- Pagination -->
+            <section class="pagination">
+                <a href="#" class="prev-btn">Previous</a>
+                <a href="#" class="page-btn">1</a>
+                <a href="#" class="page-btn">2</a>
+                <a href="#" class="page-btn">3</a>
+                <a href="#" class="next-btn">Next</a>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Bim Market. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
